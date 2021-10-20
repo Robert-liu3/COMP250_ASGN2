@@ -26,7 +26,18 @@ public class TaxCollector {
 	}
 
 	public void collectTax() {
-		/* TODO: Add your code here */
+		double totalIncomeTax = 0;
+		double totalSalesTax = 0;
+		//for each loops to loop through each foodplace and their employees
+		for (FoodPlace a: foodPlaces) {
+			totalSalesTax += a.getTotalSalesTax();
+			for (IncomeTaxPayer b: a.getIncomeTaxPayers()) {
+				totalIncomeTax += b.calculateIncomeTax();
+			}
+		}
+		//adding the tax values to their respective fields
+		incomeTaxCollected = totalIncomeTax;
+		salesTaxCollected = totalSalesTax;
 	}
 	
 	public String toString() {

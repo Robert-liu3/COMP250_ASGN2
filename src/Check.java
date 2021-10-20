@@ -30,6 +30,7 @@ public class Check {
 	}
 
 	public void setTipByPct(double tipPct ) {
-		/* TODO: Add your code here */
+		double tipInDecimal = tipPct*0.01;
+		tip = menuPrice*tipInDecimal;
 	}
 }

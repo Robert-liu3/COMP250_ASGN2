@@ -23,6 +23,12 @@ public class Customer  {
 	}
 
 	public void dineAndPayCheck(FoodPlace foodPlace, double menuPrice ) {
-		/* TODO: Add your code here */
+		Check check = new Check(menuPrice);
+		//checking for tip
+		double customerTip = targetTipPct;
+		double placeTip = foodPlace.getTipPercentage();
+		double avgTip = (customerTip+placeTip)/2;
+		check.setTipByPct(avgTip);
+		foodPlace.distributeIncomeAndSalesTax(check);
 	}
 }
