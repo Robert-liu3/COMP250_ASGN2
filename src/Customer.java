@@ -6,7 +6,8 @@ public class Customer  {
 	private int  targetTipPct;
 
 	public Customer(String name, int targetTipPct) {
-		/* TODO: Add your code here */
+		this.name = name;
+		this.targetTipPct = targetTipPct;
 	}
 
 	public String getName() {

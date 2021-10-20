@@ -5,9 +5,13 @@ public class Staff extends IncomeTaxPayer {
 	final private int incomeTaxPercentage = 25;
 
 	public Staff(String name, boolean isCook) {
-		/* TODO: Add your code here */
-		/* TODO: Also edit the super call */
-		super(null);
+		super(name);
+		int cookSalaryPerHour = 20;
+		int otherSalaryPerHour = 10;
+		if (isCook) {
+			salaryPerHour = cookSalaryPerHour;
+		}
+		else { salaryPerHour = otherSalaryPerHour;}
 	}
 
 	public int getSalaryPerHour() {

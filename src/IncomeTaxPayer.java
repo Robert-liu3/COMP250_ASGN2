@@ -7,7 +7,8 @@ public abstract class IncomeTaxPayer {
 	private double  income;
 
 	public IncomeTaxPayer(String name){
-		/* TODO: Add your code here */
+		this.name = name;
+		taxID = currentMaxTaxID++;
 	}
 
 	public static int getCurrentMaxTaxID() {

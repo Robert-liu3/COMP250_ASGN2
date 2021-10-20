@@ -5,7 +5,16 @@ public class Check {
 	private double tip;
 
 	public Check(double menuPrice) {
-		/* TODO: Add your code here */
+		double tax = menuPrice*0.15;
+		this.menuPrice = menuPrice;
+		this.salesTax = tax;
+		//TODO tip
+
+	}
+
+	public void setTipByPct(int percentage) {
+		double decimalPercent = percentage*0.01;
+		tip = decimalPercent * menuPrice;
 	}
 
 	public double getMenuPrice() {

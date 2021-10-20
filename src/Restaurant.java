@@ -7,9 +7,9 @@ public class Restaurant extends FoodPlace {
 	private Server server;
 
 	public Restaurant(String name, double fixedCosts, Owner owner, Staff cook, Server server) {
-		/* TODO: Add your code here */
-		/* TODO: Also edit the super call */
-		super(null,-1,null);
+		super(name,fixedCosts,owner);
+		this.cook = cook;
+		this.server = server;
 	}
 
 	public Staff getCook() {

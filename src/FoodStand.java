@@ -4,9 +4,7 @@ import java.util.List;
 public class FoodStand extends FoodPlace {
 
     public FoodStand(String name, double fixedCosts, WorkingOwner owner) {
-        /* TODO: Add your code here */
-        /* TODO: Also edit the super call */
-        super(null,-1,null);
+        super(name,fixedCosts,owner);
     }
 
     @Override

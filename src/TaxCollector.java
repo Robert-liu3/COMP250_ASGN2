@@ -10,7 +10,7 @@ public class TaxCollector {
 	private double salesTaxCollected;
 
 	public TaxCollector(List<FoodPlace> foodPlaces) {
-		/* TODO: Add your code here */
+		this.foodPlaces = foodPlaces;
 	}
 
 	public List<FoodPlace> getFoodPlaces() {

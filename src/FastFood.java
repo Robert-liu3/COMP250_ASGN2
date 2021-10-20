@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class FastFood extends FoodPlace {
@@ -7,9 +8,8 @@ public class FastFood extends FoodPlace {
     private List<Staff> staff = new ArrayList<>();
 
     public FastFood(String name, double fixedCosts, Owner owner, List<Staff> staff) {
-        /* TODO: Add your code here */
-        /* TODO: Also edit the super call */
-        super(null,-1,null);
+        super(name,fixedCosts,owner);
+        this.staff = new ArrayList<Staff>(staff); //"shallow" copy
     }
 
     public List<Staff> getStaff() {
