@@ -17,6 +17,8 @@ public abstract class FoodPlace {
         this.fixedCosts = fixedCosts;
         this.owner = owner;
         owner.setFoodPlace(this); //if this doesnt work, try this.owner.getFoodPlace
+        currentMaxFoodPlaceID ++;
+        foodPlaceID = currentMaxFoodPlaceID;
     }
 
     public static int getCurrentMaxFoodPlaceID() {
