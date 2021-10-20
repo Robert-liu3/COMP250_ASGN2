@@ -10,8 +10,13 @@ public abstract class FoodPlace {
     private double totalSalesTax;
     private Owner owner;
 
-    public FoodPlace(String name, double fixedCosts, Owner owner){
-        /* TODO: Add your code here */
+    FoodPlace foodPlace;
+
+    public FoodPlace(String name, double fixedCosts, Owner owner, FoodPlace foodPlace){
+        this.name = name;
+        this.fixedCosts = fixedCosts;
+        this.owner = owner;
+        this.foodPlace = foodPlace; //sets the owners foodplace????
     }
 
     public static int getCurrentMaxFoodPlaceID() {
