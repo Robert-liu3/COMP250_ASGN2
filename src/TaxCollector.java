@@ -10,7 +10,7 @@ public class TaxCollector {
 	private double salesTaxCollected;
 
 	public TaxCollector(List<FoodPlace> foodPlaces) {
-		this.foodPlaces = foodPlaces;
+		this.foodPlaces = foodPlaces; //this gives a warning due to it being redundant
 	}
 
 	public List<FoodPlace> getFoodPlaces() {

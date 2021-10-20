@@ -23,16 +23,19 @@ public class Staff extends IncomeTaxPayer {
 	}
 
 	public double workHours(int numHours) {
-		/* TODO: Add your code here */
-		/* TODO: Also remove return statement below*/
-		return -1;
+		double moneyEarned;
+		moneyEarned = this.getSalaryPerHour()*numHours; //money earned within that hour
+		this.setIncome(this.getIncome()+moneyEarned); //increments the income by the amount of money earned
+		return moneyEarned;
 	}
 
 	@Override
 	public double calculateIncomeTax() {
-		/* TODO: Add your code here */
-		/* TODO: Also remove return statement below*/
-		return -1;
+		//double incomeAfterTax;
+		double tax;
+		tax = this.getIncome()*incomeTaxPercentage*0.01; //get the income tax needed to pay
+		//incomeAfterTax = this.getIncome()-tax;
+		return tax;
 	}
 
 }

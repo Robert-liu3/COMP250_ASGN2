@@ -9,7 +9,7 @@ public class FastFood extends FoodPlace {
 
     public FastFood(String name, double fixedCosts, Owner owner, List<Staff> staff) {
         super(name,fixedCosts,owner);
-        this.staff = new ArrayList<Staff>(staff); //"shallow" copy
+        this.staff = new ArrayList<Staff>(staff); //"shallow" copy idk how to make one
     }
 
     public List<Staff> getStaff() {

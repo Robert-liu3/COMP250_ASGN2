@@ -1,4 +1,5 @@
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Restaurant extends FoodPlace {
@@ -30,14 +31,28 @@ public class Restaurant extends FoodPlace {
 
 	@Override
 	public void workShift(int hours) {
-		/* TODO: Add your code here */
+		double cookSalaryPerHour = this.getCook().getSalaryPerHour();
+		double serverSalaryPerHour = this.getServer().getSalaryPerHour();
+
+		double cookAddedIncome = cookSalaryPerHour*hours;
+		double serverAddedIncome = serverSalaryPerHour*hours;
+		double salaryExpenses = cookAddedIncome + serverAddedIncome;
+
+		//adding the income of cook and server
+		this.getCook().setIncome(this.getCook().getIncome()+cookAddedIncome);
+		this.getServer().setIncome(this.getServer().getIncome()+serverAddedIncome);
+
+		//adding salary expenses
+		this.getOwner().setSalaryExpenses(this.getOwner().getSalaryExpenses()+salaryExpenses);
 	}
 
 	@Override
 	public List<IncomeTaxPayer> getIncomeTaxPayers() {
-		/* TODO: Add your code here */
-		/* TODO: Also remove return statement below*/
-		return null;
+		ArrayList<IncomeTaxPayer> incomeTaxPayerArrayList = new ArrayList<IncomeTaxPayer>();
+		incomeTaxPayerArrayList.add(this.getCook());
+		incomeTaxPayerArrayList.add(this.getServer());
+		incomeTaxPayerArrayList.add(this.getOwner());
+		return incomeTaxPayerArrayList;
 	}
 
 	@Override

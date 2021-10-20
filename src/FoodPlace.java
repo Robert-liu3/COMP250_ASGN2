@@ -16,8 +16,7 @@ public abstract class FoodPlace {
         this.name = name;
         this.fixedCosts = fixedCosts;
         this.owner = owner;
-        owner.setFoodPlace(this);
-        //this.foodPlace = foodPlace; //sets the owners foodplace????
+        owner.setFoodPlace(this); //if this doesnt work, try this.owner.getFoodPlace
     }
 
     public static int getCurrentMaxFoodPlaceID() {
@@ -50,9 +49,13 @@ public abstract class FoodPlace {
 
     @Override
     public boolean equals(Object obj) {
-        /* TODO: Add your code here */
-        /* TODO: Also remove return statement below*/
-        return false;
+        boolean theyEqual = false;
+        if (obj instanceof FoodPlace) {
+            if (this.getFoodPlaceID() == ((FoodPlace) obj).getFoodPlaceID()) {
+                theyEqual = true;
+            }
+        }
+        return theyEqual;
     }
 
     abstract void workShift(int hours);

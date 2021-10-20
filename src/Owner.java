@@ -30,8 +30,21 @@ public class Owner extends IncomeTaxPayer {
 
 	@Override
 	public double calculateIncomeTax() {
-		/* TODO: Add your code here */
-		/* TODO: Also remove return statement below*/
-		return -1;
+		double profit;
+		double incomeTax;
+
+		double salaryExpenses = this.getSalaryExpenses(); //salary expenses
+		double fixedCosts = this.getFoodPlace().getFixedCosts(); //fixed costs
+		double taxDecimal = incomeTaxPct*0.01;
+
+		profit = this.getIncome() - salaryExpenses - fixedCosts;
+
+		if (profit < 0.0) {
+			incomeTax = 0.0;
+		} else {
+			incomeTax = profit*taxDecimal;
+		}
+
+		return incomeTax;
 	}
 }
