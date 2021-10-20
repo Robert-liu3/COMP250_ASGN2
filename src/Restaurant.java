@@ -57,14 +57,25 @@ public class Restaurant extends FoodPlace {
 
 	@Override
 	public void distributeIncomeAndSalesTax(Check check) {
-		/* TODO: Add your code here */
+		//variables
+		double menuPrice = check.getMenuPrice();
+
+		double cookTip = check.getTip()*0.2;
+		double serverTip = check.getTip()*0.8;
+
+		//increasing income
+		this.getCook().setIncome(this.getCook().getIncome()+cookTip);
+		this.getServer().setIncome(this.getServer().getIncome()+serverTip);
+		this.getOwner().setIncome(this.getOwner().getIncome()+menuPrice);
+
+		//increasing sales task
+		this.setTotalSalesTax(this.getTotalSalesTax()+check.getSalesTax());
 	}
 
 	@Override
 	public double getTipPercentage() {
-		/* TODO: Add your code here */
-		/* TODO: Also remove return statement below*/
-		return -1;
+		double targetTipPct = this.getServer().getTargetTipPct();
+		return targetTipPct;
 	}
 
 }

@@ -1,4 +1,5 @@
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FoodStand extends FoodPlace {
@@ -20,21 +21,26 @@ public class FoodStand extends FoodPlace {
 
     @Override
     public List<IncomeTaxPayer> getIncomeTaxPayers() {
-        /* TODO: Add your code here */
-        /* TODO: Also remove return statement below*/
-        return null;
+        ArrayList<IncomeTaxPayer> incomeTaxPayerArrayList = new ArrayList<IncomeTaxPayer>();
+        incomeTaxPayerArrayList.add(this.getOwner());
+        return incomeTaxPayerArrayList;
 
     }
 
     @Override
     public void distributeIncomeAndSalesTax(Check check) {
-        /* TODO: Add your code here */
+        double tip = check.getTip();
+        double menuPrice = check.getMenuPrice();
+        double salesTax = check.getSalesTax();
+
+        this.getOwner().setIncome(this.getOwner().getIncome()+tip+menuPrice);
+        this.setTotalSalesTax(this.getTotalSalesTax()+salesTax);
     }
 
     @Override
     public double getTipPercentage() {
-        /* TODO: Add your code here */
-        /* TODO: Also remove return statement below*/
-        return -1;
+        WorkingOwner owner = (WorkingOwner) this.getOwner();
+        double targetTipPct =owner.getTargetTipPct();
+        return targetTipPct;
     }
 }

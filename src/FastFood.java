@@ -30,7 +30,6 @@ public class FastFood extends FoodPlace {
 
     @Override
     public void workShift(int hours) {
-        /* TODO: Add your code here */
     }
 
     @Override
